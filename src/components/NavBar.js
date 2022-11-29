@@ -18,7 +18,7 @@ function Navbar() {
           <Link to='#' className='menu-bars d-flex'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          <img style={{width:"150px",}} src="https://freepikpsd.com/file/2019/10/aadhar-logo-png-2-Transparent-Images.png"/>
+          {/* <img style={{width:"150px",}} src="https://freepikpsd.com/file/2019/10/aadhar-logo-png-2-Transparent-Images.png"/> */}
 
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>

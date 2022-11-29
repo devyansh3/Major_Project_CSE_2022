@@ -31,8 +31,8 @@ export default function Login() {
     <>
       <Card className="mt-3">
         <Card.Body>
-          <h2 className='text-center mb-4'>Admin App</h2>
-          <img style={{width:"200px", marginLeft:'700px' }} src="https://freepikpsd.com/file/2019/10/aadhar-logo-png-2-Transparent-Images.png" />
+          <h2 className='text-center mb-4'>Cloaked- Redaction App</h2>
+          {/* <img style={{width:"200px", marginLeft:'700px' }} src="https://freepikpsd.com/file/2019/10/aadhar-logo-png-2-Transparent-Images.png" /> */}
           {error && <Alert variant='danger'>{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id='email'>

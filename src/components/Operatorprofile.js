@@ -1,4 +1,3 @@
-import React from "react";
 
 // react-bootstrap components
 import {
@@ -16,9 +15,77 @@ import {Link, useLocation} from 'react-router-dom'
 import Review from "./Review";
 
 
+import React, { useState, useEffect } from "react";
+import { db } from "../firebase";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { GoogleAuthProvider } from "firebase/auth";
+import { useAuth } from "../contexts/AuthContext";
+// react-bootstrap components
+
+
+import { uuid } from "uuidv4";
+
+
 function OperatorProfile() {
   const location = useLocation();
   const user = location.state?.user;
+
+
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [ask, setAsk] = useState("");
+  const [slots, setSlots] = useState(4);
+  const [pincode, setPincode] = useState("");
+  const [role, setRole] = useState("");
+  const [gender, setGender] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [profile_img, setProfile_img] = useState("");
+  const [avg, setAvg] = useState(5);
+  const [count, setCount] = useState(1);
+  const [sum, setSum] = useState(5);
+  const [age, setAge] = useState("");
+  const [is_dark, setIs_dark] = useState(false);
+  const [phone, setPhone] = useState("");
+
+
+
+  const updateoperator = async (e) => {
+    e.preventDefault();
+    try {
+    
+
+      await addDoc(collection(db, "operators"), {
+        address: {
+          address_line: ask,
+          city: city,
+          state: state,
+        },
+        age: age,
+        ask: ask,
+        email: email,
+        gender: gender,
+        is_dark: is_dark,
+        name: name,
+        phone: phone,
+        profile_img: profile_img,
+        ratings: {
+          avg: avg,
+          count: count,
+          sum: sum,
+        },
+        role: role,
+        slots_per_hour: slots,
+        uid: uuid(),
+      });
+      // onClose()
+    } catch (err) {
+      alert(err);
+    }
+  };
+
 
     return (
         <>
@@ -126,15 +193,15 @@ function OperatorProfile() {
                       </Row>
                      <div className="d-flex">
 
-                     <Button
-                        className="pull-right mt-2"
                     
-                        type="submit"
-                        variant="light"
-                      >
-                        <Link to='#'> Update operator details</Link>
+                         <button
+                    type="submit"
+                    class="btn btn-primary"
+                    onClick={updateoperator}
+                  >
+                    Update operator Details
+                  </button>
                        
-                      </Button>
 
                       <Button
                         className="pull-right mt-2 ml-3"
@@ -164,12 +231,12 @@ function OperatorProfile() {
                           style={{width:'400px', height:'250px'}}
                           src="https://img.freepik.com/premium-vector/man-avatar-profile-round-icon_24640-14044.jpg?w=2000"
                         ></img>
-                        <h5 className="title">Devyansh Sehgal</h5>
+                        <h5 className="title">{user?.name}</h5>
                       </a>
               
                     </div>
                     <p className="description text-center">
-                      Devyansh Sehgal is an active aadhar operator <br></br>working 6 days a week
+                    {user?.name} is an active aadhar operator <br></br>working 6 days a week
                
                   
                     </p>

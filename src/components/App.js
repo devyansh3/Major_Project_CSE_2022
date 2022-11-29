@@ -21,6 +21,9 @@ import OperatorList from "./OperatorList";
 import AddNewOperator from "./AddNewOperator";
 import OperatorProfile from "./Operatorprofile";
 import Analytics from "./Analytics";
+import Map from "./Map";
+import DummyNLP from "./DummyNLP";
+import DummyResult from "./DummyResult";
 
 function App() {
   return (
@@ -30,7 +33,9 @@ function App() {
           <Router>
             <NavBar />
               <Switch>
-                <PrivateRoute exact path='/' component={OperatorList} />
+                {/* <PrivateRoute exact path='/' component={OperatorList} /> */}
+                <PrivateRoute exact path='/' component={DummyNLP} />
+
                 <PrivateRoute
                   path='/update-profile'
                   component={UpdateProfile}
@@ -50,6 +55,9 @@ function App() {
                 <Route path='/addoperator' component={AddNewOperator} />
                 <Route path='/operatorprofile' component={OperatorProfile} />
                 <Route path='/analytics' component={Analytics} />
+                <Route path='/maps' component={Map} />
+                <Route path='/dummyresult' component={DummyResult} />
+
 
               </Switch>
           </Router>

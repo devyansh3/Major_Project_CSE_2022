@@ -16,26 +16,39 @@ export const SidebarData = [
   //   icon: <IoIcons.IoIosPaper />,
   //   cName: 'nav-text'
   // },
-   {
-    title: 'Operators',
-    path: '/operatorlist',
-    icon: <IoIcons.IoIosPaper />,
-    cName: 'nav-text'
-  },
+  //  {
+  //   title: 'Operators',
+  //   path: '/operatorlist',
+  //   icon: <IoIcons.IoIosPaper />,
+  //   cName: 'nav-text'
+  // },
+  // {
+  //   title: 'Add new Operator',
+  //   path: '/addoperator',
+  //   icon: <IoIcons.IoMdPeople />,
+  //   cName: 'nav-text'
+  // }, 
   {
-    title: 'Add new Operator',
-    path: '/addoperator',
+    title: 'Add new file',
+    path: '/',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
-  }, 
+  }
 
-  {
-    title: 'Analytics',
-    path: '/analytics',
-    icon: <IoIcons.IoIosPaper />,
+  // {
+  //   title: 'Analytics',
+  //   path: '/analytics',
+  //   icon: <IoIcons.IoIosPaper />,
   
-    cName: 'nav-text'
-  }, 
+  //   cName: 'nav-text'
+  // }, 
+  // {
+  //   title: 'Map',
+  //   path: '/map',
+  //   icon: <IoIcons.IoIosPaper />,
+  
+  //   cName: 'nav-text'
+  // }, 
   
   // {
   //   title: 'Candidates',
