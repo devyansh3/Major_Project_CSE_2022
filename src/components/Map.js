@@ -4,8 +4,8 @@ import "./Map.css";
 // import { showDataOnMap } from "./util";
 
 function Map() {
-    const zoom = 12;
-    const center = [28.5, 74.5]
+  const zoom = 12;
+  const center = [28.5, 74.5];
   return (
     <div className="map">
       <LeafletMap center={center} zoom={zoom}>

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
 import { Table } from "react-bootstrap";
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 let data = {
@@ -34,7 +34,7 @@ function Mechanical() {
   return (
     <div>
       <h1 style={{ textAlign: "center", marginTop: "1%" }}>ACM Elections</h1>
-      <Table striped bordered hover variant='light' style={{ marginTop: "2%" }}>
+      <Table striped bordered hover variant="light" style={{ marginTop: "2%" }}>
         <thead>
           <tr>
             <th>#</th>
@@ -48,11 +48,11 @@ function Mechanical() {
             <td id={"1"}>1</td>
             <td>Ananya</td>
             <td>President</td>
-            <td id='1'>
+            <td id="1">
               <button
-                className='vote-button'
-                value='1'
-                id='1'
+                className="vote-button"
+                value="1"
+                id="1"
                 onClick={vote}
                 disabled={voted}
               >
@@ -64,11 +64,11 @@ function Mechanical() {
             <td>2</td>
             <td>dhanush</td>
             <td>President</td>
-            <td id='2'>
+            <td id="2">
               <button
-                className='vote-button'
-                value='2'
-                id='2'
+                className="vote-button"
+                value="2"
+                id="2"
                 onClick={vote}
                 disabled={voted}
               >
@@ -80,11 +80,11 @@ function Mechanical() {
             <td>3</td>
             <td>Amit</td>
             <td>Secretary</td>
-            <td id='3'>
+            <td id="3">
               <button
-                className='vote-button'
-                value='3'
-                id='3'
+                className="vote-button"
+                value="3"
+                id="3"
                 onClick={vote}
                 disabled={voted}
               >
@@ -95,7 +95,7 @@ function Mechanical() {
         </tbody>
       </Table>
       <ToastContainer
-        position='top-center'
+        position="top-center"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}

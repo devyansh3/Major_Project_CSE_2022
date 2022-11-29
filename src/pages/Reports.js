@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import "./pagestyles.css";
-import ReportCard from "../components/ReportCard";
-import "../pages/pagestyles.css";
-import Card from "../components/Card";
-import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
+import React, { useState } from "react";
+import ReportCard from "../components/ReportCard";
+import { db } from "../firebase";
+import "../pages/pagestyles.css";
+import "./pagestyles.css";
 
 function Reports() {
   const [elections, setElections] = useState([]);
@@ -34,7 +33,7 @@ function Reports() {
 
       {!loader && (
         <>
-          <div className='wrapper mt-5'>
+          <div className="wrapper mt-5">
             {elections.map((card) => {
               return (
                 <ReportCard
@@ -43,8 +42,8 @@ function Reports() {
                   img={card.img}
                   title={card.title}
                   description={card.description[0].candidates}
-                  date='End Date: 5th May'
-                  route='/result'
+                  date="End Date: 5th May"
+                  route="/result"
                 />
               );
             })}

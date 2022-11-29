@@ -1,14 +1,13 @@
-import React from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import * as IoIcons from 'react-icons/io';
+import React from "react";
+import * as AiIcons from "react-icons/ai";
+import * as IoIcons from "react-icons/io";
 
 export const SidebarData = [
   {
-    title: 'Home',
-    path: '/',
+    title: "Home",
+    path: "/",
     icon: <AiIcons.AiFillHome />,
-    cName: 'nav-text'
+    cName: "nav-text",
   },
   // {
   //   title: 'Reports',
@@ -27,29 +26,29 @@ export const SidebarData = [
   //   path: '/addoperator',
   //   icon: <IoIcons.IoMdPeople />,
   //   cName: 'nav-text'
-  // }, 
+  // },
   {
-    title: 'Add new file',
-    path: '/',
+    title: "Add new file",
+    path: "/",
     icon: <IoIcons.IoMdPeople />,
-    cName: 'nav-text'
-  }
+    cName: "nav-text",
+  },
 
   // {
   //   title: 'Analytics',
   //   path: '/analytics',
   //   icon: <IoIcons.IoIosPaper />,
-  
+
   //   cName: 'nav-text'
-  // }, 
+  // },
   // {
   //   title: 'Map',
   //   path: '/map',
   //   icon: <IoIcons.IoIosPaper />,
-  
+
   //   cName: 'nav-text'
-  // }, 
-  
+  // },
+
   // {
   //   title: 'Candidates',
   //   path: '/candidates',
@@ -62,7 +61,6 @@ export const SidebarData = [
   //   icon: <FaIcons.FaEnvelopeOpenText />,
   //   cName: 'nav-text'
   // },
-  
 
   // {
   //   title: 'Update profile',
@@ -70,6 +68,4 @@ export const SidebarData = [
   //   icon: <IoIcons.IoMdHelpCircle />,
   //   cName: 'nav-text'
   // }
-
-
 ];

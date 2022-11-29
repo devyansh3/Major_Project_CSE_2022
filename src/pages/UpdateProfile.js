@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 function UpdateProfile() {
   return (
-      <>
-    <Card>
+    <>
+      <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Update</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -18,8 +18,8 @@ function UpdateProfile() {
           Log Out
         </Button>
       </div>
-      </>
-  )
+    </>
+  );
 }
 
-export default UpdateProfile
+export default UpdateProfile;

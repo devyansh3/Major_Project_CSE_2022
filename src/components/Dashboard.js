@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { Button, Alert } from "react-bootstrap";
-import { useAuth } from "../contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
-import { db } from "../firebase";
 import {
   collection,
-  getDocs,
-  setDoc,
   doc,
+  getDocs,
   getFirestore,
+  setDoc,
 } from "firebase/firestore";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import { db } from "../firebase";
 import Card from "./Card";
 
 async function getUsers() {
@@ -78,7 +78,7 @@ export default function Dashboard() {
 
       {!loader && (
         <>
-          <div className='wrapper mt-5'>
+          <div className="wrapper mt-5">
             {elections.map((card) => {
               return (
                 <Card
@@ -87,15 +87,15 @@ export default function Dashboard() {
                   img={card.img}
                   title={card.title}
                   description={card.description[0].candidates}
-                  date='End Date: 5th May'
-                  route='/club'
+                  date="End Date: 5th May"
+                  route="/club"
                 />
               );
             })}
           </div>
 
-          <div className='w-100 text-center mt-3'>
-            <Button variant='link' onClick={handleLogout}>
+          <div className="w-100 text-center mt-3">
+            <Button variant="link" onClick={handleLogout}>
               Log Out
             </Button>
           </div>

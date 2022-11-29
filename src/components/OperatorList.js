@@ -1,29 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-import {
-  Badge,
-  Button,
-  Card,
-  Navbar,
-  Nav,
-  Table,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { collection, getDocs, query } from "firebase/firestore";
+import { Button, Card, Col, Container, Row, Table } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
 import { db } from "../firebase";
-import {
-  collection,
-  getDocs,
-  setDoc,
-  doc,
-  getFirestore,
-  orderBy,
-  onSnapshot,
-  query,
-} from "firebase/firestore";
 
 function OperatorList() {
   const [error, setError] = useState("");
@@ -142,21 +123,26 @@ function OperatorList() {
                     </tr>
                   </thead>
                   <tbody>
-                   
-                       {users.map((item) => (
-                     <tr>
-                     <td>{item.slots_per_hour}</td>
-                     <td>
-                       <div onClick={() => history.push({pathname: '/operatorprofile', state: {user: item}})}>{item.name}</div>
-                     </td>
-                     <td>{item.ask}</td>
-                     <td>{item.ratings?.avg}</td>
-                     <td>{item.phone}</td>
-                   </tr>
+                    {users.map((item) => (
+                      <tr>
+                        <td>{item.slots_per_hour}</td>
+                        <td>
+                          <div
+                            onClick={() =>
+                              history.push({
+                                pathname: "/operatorprofile",
+                                state: { user: item },
+                              })
+                            }
+                          >
+                            {item.name}
+                          </div>
+                        </td>
+                        <td>{item.ask}</td>
+                        <td>{item.ratings?.avg}</td>
+                        <td>{item.phone}</td>
+                      </tr>
                     ))}
-                   
-                   
-                    
                   </tbody>
                 </Table>
               </Card.Body>

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
 import { Table } from "react-bootstrap";
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 
 let data = {
   1: 0,
@@ -50,7 +49,13 @@ function List() {
             <td>Mark</td>
             <td>President</td>
             <td id="1">
-              <button className="vote-button" value="1" id="1" onClick={vote} disabled={voted}>
+              <button
+                className="vote-button"
+                value="1"
+                id="1"
+                onClick={vote}
+                disabled={voted}
+              >
                 Vote Confirm
               </button>
             </td>
@@ -60,7 +65,13 @@ function List() {
             <td>Jacob</td>
             <td>President</td>
             <td id="2">
-              <button className="vote-button" value="2" id="2" onClick={vote} disabled={voted}>
+              <button
+                className="vote-button"
+                value="2"
+                id="2"
+                onClick={vote}
+                disabled={voted}
+              >
                 Vote Confirm
               </button>
             </td>
@@ -70,7 +81,13 @@ function List() {
             <td>Larry</td>
             <td>Secretary</td>
             <td id="3">
-              <button className="vote-button" value="3" id="3" onClick={vote} disabled={voted}>
+              <button
+                className="vote-button"
+                value="3"
+                id="3"
+                onClick={vote}
+                disabled={voted}
+              >
                 Vote Confirm
               </button>
             </td>

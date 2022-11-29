@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useLocation } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { db } from "../firebase";
 import "../pages/pagestyles.css";
-import { collection, query, getDocs, where } from "firebase/firestore";
 
 function Club() {
   const [voted, setVoted] = useState(false);
@@ -59,11 +59,11 @@ function Club() {
         <td id={"1"}>1</td>
         <td>{cand.name}</td>
         <td>{cand.post}</td>
-        <td id='1'>
+        <td id="1">
           <button
-            className='vote-button'
-            value='1'
-            id='1'
+            className="vote-button"
+            value="1"
+            id="1"
             disabled={voted}
             onClick={vote}
           >
@@ -78,7 +78,7 @@ function Club() {
   return (
     <div>
       <h1 style={{ textAlign: "center", marginTop: "1%" }}>ACM Elections</h1>
-      <Table striped bordered hover variant='light' style={{ marginTop: "2%" }}>
+      <Table striped bordered hover variant="light" style={{ marginTop: "2%" }}>
         <thead>
           <tr>
             <th>#</th>
@@ -91,7 +91,7 @@ function Club() {
           <>
             {loader && (
               <>
-                <h1 className='text'>Loading...</h1>
+                <h1 className="text">Loading...</h1>
               </>
             )}
             {!loader && (
@@ -105,7 +105,7 @@ function Club() {
         </tbody>
       </Table>
       <ToastContainer
-        position='top-center'
+        position="top-center"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}

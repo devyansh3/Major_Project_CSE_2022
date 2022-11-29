@@ -1,11 +1,8 @@
-import React from 'react'
-import './pagestyles.css'
-
+import React from "react";
+import "./pagestyles.css";
 
 function LiveChat() {
-  return (
-    <div className='text'>Start your LiveChat</div>
-  )
+  return <div className="text">Start your LiveChat</div>;
 }
 
-export default LiveChat
+export default LiveChat;

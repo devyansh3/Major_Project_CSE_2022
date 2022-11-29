@@ -1,9 +1,8 @@
-import "./pagestyles.css";
-import React, { useEffect } from "react";
-import { Dropdown, Button, Form } from "react-bootstrap";
+import { addDoc, collection, getDocs } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { Button, Dropdown, Form } from "react-bootstrap";
 import { db } from "../firebase";
-import { collection, getDocs, setDoc, doc, addDoc } from "firebase/firestore";
-import { useState } from "react";
+import "./pagestyles.css";
 
 function Candidates() {
   const [elections, setElections] = useState([]);
@@ -47,12 +46,12 @@ function Candidates() {
 
       {!loader && (
         <>
-          <div className='mt-4 text-center w-100 '>
-            <Form className='add' onSubmit={handleSubmit}>
+          <div className="mt-4 text-center w-100 ">
+            <Form className="add" onSubmit={handleSubmit}>
               <input
-                type='name'
-                placeholder='enter name'
-                id='name1'
+                type="name"
+                placeholder="enter name"
+                id="name1"
                 name={candidate.name}
                 value={candidate.name}
                 required
@@ -62,9 +61,9 @@ function Candidates() {
               />
 
               <input
-                type='name'
-                placeholder='post name'
-                id='post1'
+                type="name"
+                placeholder="post name"
+                id="post1"
                 name={candidate.post}
                 value={candidate.post}
                 required
@@ -74,7 +73,7 @@ function Candidates() {
               />
 
               <Dropdown>
-                <Dropdown.Toggle variant='info' id='dropdown-basic'>
+                <Dropdown.Toggle variant="info" id="dropdown-basic">
                   Select Election
                 </Dropdown.Toggle>
 
@@ -96,7 +95,7 @@ function Candidates() {
                   ))}
                 </Dropdown.Menu>
               </Dropdown>
-              <Button className='mt-4' type='submit'>
+              <Button className="mt-4" type="submit">
                 Submit
               </Button>
             </Form>

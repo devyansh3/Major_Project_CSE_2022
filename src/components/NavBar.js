@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
-import './Navbar.css';
-import { IconContext } from 'react-icons';
+import React, { useState } from "react";
+import { IconContext } from "react-icons";
+import * as AiIcons from "react-icons/ai";
+import * as FaIcons from "react-icons/fa";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+import { SidebarData } from "./SidebarData";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -13,18 +13,17 @@ function Navbar() {
 
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar'>
-          <Link to='#' className='menu-bars d-flex'>
+      <IconContext.Provider value={{ color: "#fff" }}>
+        <div className="navbar">
+          <Link to="#" className="menu-bars d-flex">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
           {/* <img style={{width:"150px",}} src="https://freepikpsd.com/file/2019/10/aadhar-logo-png-2-Transparent-Images.png"/> */}
-
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
-              <Link to='#' className='menu-bars'>
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu-items" onClick={showSidebar}>
+            <li className="navbar-toggle">
+              <Link to="#" className="menu-bars">
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>

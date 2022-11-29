@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { db } from "../firebase";
-import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { GoogleAuthProvider } from "firebase/auth";
+import { addDoc, collection } from "firebase/firestore";
+import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import { db } from "../firebase";
 // react-bootstrap components
-import {
-  Badge,
-  Button,
-  Card,
-  Navbar,
-  Nav,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 import { uuid } from "uuidv4";
 

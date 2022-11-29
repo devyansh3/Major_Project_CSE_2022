@@ -1,50 +1,49 @@
-import React, { useState } from 'react';
-import people from './Data';
-import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
-import './Review.css'
+import React, { useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import people from "./Data";
+import "./Review.css";
 
 const Review = () => {
   const [index, setIndex] = useState(0);
-  const {name, job, image, text} = people[index];
+  const { name, job, image, text } = people[index];
 
   const checkNumber = (number) => {
-    if(number > people.length - 1){
+    if (number > people.length - 1) {
       return 0;
-    }
-    else if(number < 0){
+    } else if (number < 0) {
       return people.length - 1;
     }
     return number;
-  }
+  };
 
   const nextPerson = () => {
     setIndex((index) => {
       let newIndex = index + 1;
       return checkNumber(newIndex);
-    }) 
+    });
   };
 
   const prevPerson = () => {
     setIndex((index) => {
       let newIndex = index - 1;
       return checkNumber(newIndex);
-    }) 
-  }
+    });
+  };
 
   const randomPerson = () => {
-    let randomNumber = Math.floor (Math.random() * people.length);
-    if(randomNumber === index ){
+    let randomNumber = Math.floor(Math.random() * people.length);
+    if (randomNumber === index) {
       randomNumber = index + 1;
     }
     setIndex(checkNumber(randomNumber));
-  }
+  };
 
-  return<article className="review">
-        <h5>User reviews</h5>
+  return (
+    <article className="review">
+      <h5>User reviews</h5>
 
-    <div className="img-container">
-      <img  src={image} alt={name} className="person-img"/>
-      
+      <div className="img-container">
+        <img src={image} alt={name} className="person-img" />
       </div>
       <h4 className="author">{name}</h4>
       <p className="jon">{job}</p>
@@ -55,10 +54,10 @@ const Review = () => {
         </button>
         <button className="next-btn" onClick={nextPerson}>
           <FaChevronRight />
-        </button>  
+        </button>
       </div>
-     
-  </article>;
+    </article>
+  );
 };
 
 export default Review;
