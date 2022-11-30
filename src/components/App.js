@@ -13,7 +13,6 @@ import DummyResult from "./DummyResult";
 import ForgotPassword from "./ForgotPassword";
 import List from "./List";
 import Login from "./Login";
-import Map from "./Map";
 import Mechanical from "./Mechanical";
 import NavBar from "./NavBar";
 import OperatorList from "./OperatorList";
