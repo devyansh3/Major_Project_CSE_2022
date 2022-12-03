@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Alert, Button, Card, Form } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
@@ -18,7 +18,13 @@ export default function Login() {
     try {
       setError("");
       setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
+      fetch("/data").then((res) =>
+        res.json().then((data) => {
+          console.log(data);
+        })
+      );
+
+      login(emailRef.current.value, passwordRef.current.value);
       history.push("/");
     } catch {
       setError("Failed to log in");

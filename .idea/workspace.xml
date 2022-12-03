@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3708a4ac-97d3-4983-b02b-b5d3a9b602f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Major_Project_CSE_2022.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.idea/Major_Project_CSE_2022.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/admin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/acm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/acm1png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/club.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/mech.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/AddNewOperator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Analytics.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Analytics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Cards.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Club.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/DummyNLP.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/DummyResult.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ForgotPassword.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/List.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Mechanical.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/OperatorList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Operatorprofile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/PrivateRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ReportCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Result.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Review.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/SidebarData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Signup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/UpdateProfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/landing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/contexts/AuthContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/firebase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/LiveChat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Reports.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/UpdateProfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/api/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/candidates.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/pagestyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/acm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/acm1png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/club.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mech.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddNewOperator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Analytics.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Analytics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cards.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Club.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DummyNLP.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DummyResult.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ForgotPassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Mechanical.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OperatorList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Operatorprofile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PrivateRoute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ReportCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Result.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Review.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SidebarData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Signup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UpdateProfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/AuthContext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LiveChat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Reports.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/UpdateProfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/candidates.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pagestyles.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IGDIHoWr72Wno62AKPLTHHEp8A" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3708a4ac-97d3-4983-b02b-b5d3a9b602f3" name="Changes" comment="" />
+      <created>1669798947256</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669798947256</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
