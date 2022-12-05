@@ -37,18 +37,23 @@ def txt_input():
 
 # REDACTION HAPPENS HERE. THE MODEL IS INEFFICIENT AT THE MOMENT.
 def sanitize(text, categories):
-    document = nlp(text)
-    redacted = []
-    with document.retokenize() as retokenizer:
-        for ent in document.ents:
-            retokenizer.merge(ent)
-    for token in document:
-        if token.ent_type_ in categories:
-            redacted.append("[REDACTED]")
-        else:
-            redacted.append(token.text)
-    final = (" ".join(redacted))
-    return final
+    if "SEARCH" in type:
+        search = print("Enter keyword : ",input())
+        final = text.replace(search,"[REDACTED]")
+        return final
+    else:
+        document = nlp(text)
+        redacted = []
+        with document.retokenize() as retokenizer:
+            for ent in document.ents:
+                retokenizer.merge(ent)
+        for token in document:
+            if token.ent_type_ in categories:
+                redacted.append("[REDACTED]")
+            else:
+                redacted.append(token.text)
+        final = (" ".join(redacted))
+        return final
 
 
 par = ['PERSON', 'ORG']
@@ -73,6 +78,23 @@ def redaction(path, categories):
             final_text = sanitize(text, categories)
     return final_text
 
+
+def displayCount(sent):
+    sentence = nlp(sent)
+    label = {}
+    cnt = {"PERSON":0,"ORGANISATION":0,"NUMBERS":0,"LOCATIONS":0}
+    for ent in sentence.ents:
+        label[ent.text] = ent.label_
+    for i in range(len(label)):
+        if list(label.values())[i] == "PERSON":
+            cnt["PERSON"]+=1
+        elif list(label.values())[i] == "ORG":
+            cnt["ORGANISATION"]+=1
+        elif list(label.values())[i] == "CARDINAL":
+            cnt["NUMBERS"]+=1
+        elif list(label.values())[i] == "GPE":
+            cnt["LOCATIONS"]+=1
+    print(cnt)
 
 if __name__ == '__main__':
     app.run(debug=True)
