@@ -26,12 +26,30 @@ function DummyNLP() {
             id="dropdown-basic-button"
             title="Choose what to redact"
           >
-            <Dropdown.Item href="#/action-1">Name</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">
-              Credit/Debit Card no
-            </Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Phone Numbers</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Emails</Dropdown.Item>
+            <div className="container">
+            <div className="d-flex ">
+            <input className="py-2" type="checkbox" id="formFile" />
+            <p>person</p>
+            </div>
+
+            <div className="d-flex ">
+            <input className="py-2" type="checkbox" id="formFile" />
+            <p>organisation</p>
+            </div>
+
+            <div className="d-flex ">
+            <input className="py-2" type="checkbox" id="formFile" />
+            <p>cardinal</p>
+            </div>
+
+            <div className="d-flex ">
+            <input className="py-2" type="checkbox" id="formFile" />
+            <p>location</p>
+            </div>
+            </div>
+            
+            
+           
           </DropdownButton>
 
           <button type="button" class="btn btn-light mt-3">

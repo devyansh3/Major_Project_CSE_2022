@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/data', methods=['POST'])
 def get_time():
-    ans = redaction(request.json['path'], par)
+    ans = redaction(request.json['path'],par)
     return {
         'redacted': ans,
     }
