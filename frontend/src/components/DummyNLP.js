@@ -13,7 +13,7 @@ function DummyNLP() {
     // console.log(event.target.value)
 
     if (arr.indexOf(itemToAdd.target.value) != -1) {
-      arr.splice(arr.indexOf(itemToAdd), 1)
+      arr.splice(arr.indexOf(itemToAdd), 1);
     } else {
       arr.push(itemToAdd.target.value);
     }
@@ -26,9 +26,25 @@ function DummyNLP() {
       console.log(arr[i]);
     }
 
-    console.log(arr)
-    
+    console.log(arr);
   };
+
+  async function handleSubmit() {
+    fetch("/data", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        path: "/Users/sompande/Documents/KPMG_SomPande/Bonafide.pdf",
+        categories: arr,
+      }),
+    }).then((res) =>
+      res.json().then((data) => {
+        console.log(data["red_metrics"]);
+      })
+    );
+  }
 
   return (
     <>
@@ -92,8 +108,12 @@ function DummyNLP() {
             </div>
           </DropdownButton>
 
-          <button type="button" class="btn btn-light mt-3">
-            <Link to="/dummyresult">Submit</Link>
+          <button
+            type="button"
+            class="btn btn-light mt-3"
+            onClick={handleSubmit}
+          >
+            Submit
           </button>
 
           <button

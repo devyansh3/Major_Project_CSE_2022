@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/data', methods=['POST'])
 def get_time():
-    ans = redaction(request.json['path'],par)
+    ans = redaction(request.json['path'], request.json['categories'])
     red_metrics = displayCount(request.json['path'])
     return {
         'redacted': ans,
@@ -56,9 +56,6 @@ def sanitize(text, categories):
                 redacted.append(token.text)
         final = (" ".join(redacted))
         return final
-
-
-par = ['PERSON', 'ORG']
 
 
 def redaction(path, categories):
