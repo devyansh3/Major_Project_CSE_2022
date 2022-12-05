@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/data', methods=['POST'])
 def get_time():
-    ans = redaction(request.json['path'])
+    ans = redaction(request.json['path'], par)
     return {
         'redacted': ans,
     }
@@ -36,14 +36,14 @@ def txtinp():
 
 
 # REDACTION HAPPENS HERE. THE MODEL IS INEFFICIENT AT THE MOMENT.
-def Sanitize(text,type):
+def Sanitize(text,categories):
     document = nlp(text)
     redacted = []
     with document.retokenize() as retokenizer:
         for ent in document.ents:
             retokenizer.merge(ent)
     for token in document:
-        if token.ent_type_ in type:
+        if token.ent_type_ in categories:
             redacted.append("[REDACTED]")
         else:
             redacted.append(token.text)
@@ -56,9 +56,9 @@ def Sanitize(text,type):
 #     print(" 1. PERSON\n 2. ORGANISATION\n 3. TIME\n 4. GPE\n 5.CARDINAL ")
 #     ans = list((input().strip().split(' ')))
 #     return ans
+par = ['PERSON','ORG']
 
-
-def redaction(path):
+def redaction(path,categories):
     var = 1
     txttype = "pdf"
     final_text = ''
@@ -68,15 +68,14 @@ def redaction(path):
     if var ==0: #CASE FOR MANUAL REDACTION
         pass
     if var ==1: #CASE FOR ENTITY REDACTION
-        par = ['PERSON','ORG']
         if txttype == "pdf":
             page = pdftoTxt(path)
             for i in range(len(page)):
-                hell.append(Sanitize(page[i],par))
+                hell.append(Sanitize(page[i],categories))
             final_text = ' '.join(hell)
         if txttype == "txt":
             text = txtinp()
-            final_text =  Sanitize(text,par)
+            final_text =  Sanitize(text,categories)
     return final_text
 
 
