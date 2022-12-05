@@ -18,17 +18,6 @@ export default function Login() {
     try {
       setError("");
       setLoading(true);
-      fetch("/data", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ path: "/Users/sompande/Documents/KPMG_SomPande/Bonafide.pdf" }),
-      }).then((res) =>
-        res.json().then((data) => {
-          console.log(data['redacted']);
-        })
-      );
 
       login(emailRef.current.value, passwordRef.current.value);
       history.push("/");

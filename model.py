@@ -164,9 +164,9 @@ def displayCount(sent):
 par = ["SEARCH"]
 sent = pdftoTxt()
 
-Sanitize(sent,par)
+# Sanitize(sent,par)
 
-# displayCount(sent)
+displayCount(sent)
 
 
 

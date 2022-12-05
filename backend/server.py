@@ -11,9 +11,11 @@ app = Flask(__name__)
 
 @app.route('/data', methods=['POST'])
 def get_time():
-    ans = redaction(request.json['path'],par)
+    ans = redaction(request.json['path'], request.json['categories'])
+    red_metrics = displayCount(request.json['path'])
     return {
         'redacted': ans,
+        'red_metrics': red_metrics
     }
 
 
@@ -37,7 +39,7 @@ def txt_input():
 
 # REDACTION HAPPENS HERE. THE MODEL IS INEFFICIENT AT THE MOMENT.
 def sanitize(text, categories):
-    if "SEARCH" in type:
+    if "SEARCH" in categories:
         search = print("Enter keyword : ",input())
         final = text.replace(search,"[REDACTED]")
         return final
@@ -54,9 +56,6 @@ def sanitize(text, categories):
                 redacted.append(token.text)
         final = (" ".join(redacted))
         return final
-
-
-par = ['PERSON', 'ORG']
 
 
 def redaction(path, categories):
@@ -79,8 +78,9 @@ def redaction(path, categories):
     return final_text
 
 
-def displayCount(sent):
-    sentence = nlp(sent)
+def displayCount(path):
+    sent = pdf_to_text(path)
+    sentence = nlp(" ".join(sent))
     label = {}
     cnt = {"PERSON":0,"ORGANISATION":0,"NUMBERS":0,"LOCATIONS":0}
     for ent in sentence.ents:
@@ -94,7 +94,7 @@ def displayCount(sent):
             cnt["NUMBERS"]+=1
         elif list(label.values())[i] == "GPE":
             cnt["LOCATIONS"]+=1
-    print(cnt)
+    return cnt
 
 if __name__ == '__main__':
     app.run(debug=True)
