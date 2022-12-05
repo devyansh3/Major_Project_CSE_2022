@@ -1,8 +1,8 @@
-from flask import Flask, request
 import datetime
-import spacy
-from spacy import displacy
+
 import pdfplumber
+import spacy
+from flask import Flask, request
 
 x = datetime.datetime.now()
 
@@ -15,13 +15,13 @@ def get_time():
     return {
         'redacted': ans,
     }
-  
+
 
 nlp = spacy.load('en_core_web_sm')
 
 
 # TAKE DOC INPUT HERE
-def pdftoTxt(path):
+def pdf_to_text(path):
     pages = []
     with pdfplumber.open(path) as pdf:
         for i in range(len(pdf.pages)):
@@ -30,13 +30,13 @@ def pdftoTxt(path):
     return pages
 
 
-def txtinp():
+def txt_input():
     txt = input()
     return txt
 
 
 # REDACTION HAPPENS HERE. THE MODEL IS INEFFICIENT AT THE MOMENT.
-def Sanitize(text,categories):
+def sanitize(text, categories):
     document = nlp(text)
     redacted = []
     with document.retokenize() as retokenizer:
@@ -51,31 +51,26 @@ def Sanitize(text,categories):
     return final
 
 
-# def selectParam():
-#     print("Choose redaction parameters : ")
-#     print(" 1. PERSON\n 2. ORGANISATION\n 3. TIME\n 4. GPE\n 5.CARDINAL ")
-#     ans = list((input().strip().split(' ')))
-#     return ans
-par = ['PERSON','ORG']
+par = ['PERSON', 'ORG']
 
-def redaction(path,categories):
+
+def redaction(path, categories):
     var = 1
-    txttype = "pdf"
+    txt_type = "pdf"
     final_text = ''
     hell = []
 
-
-    if var ==0: #CASE FOR MANUAL REDACTION
+    if var == 0:  # CASE FOR MANUAL REDACTION
         pass
-    if var ==1: #CASE FOR ENTITY REDACTION
-        if txttype == "pdf":
-            page = pdftoTxt(path)
+    if var == 1:  # CASE FOR ENTITY REDACTION
+        if txt_type == "pdf":
+            page = pdf_to_text(path)
             for i in range(len(page)):
-                hell.append(Sanitize(page[i],categories))
+                hell.append(sanitize(page[i], categories))
             final_text = ' '.join(hell)
-        if txttype == "txt":
-            text = txtinp()
-            final_text =  Sanitize(text,categories)
+        if txt_type == "txt":
+            text = txt_input()
+            final_text = sanitize(text, categories)
     return final_text
 
 
