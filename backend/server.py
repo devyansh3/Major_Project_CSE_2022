@@ -40,7 +40,7 @@ def txt_input():
 # REDACTION HAPPENS HERE. THE MODEL IS INEFFICIENT AT THE MOMENT.
 def sanitize(text, categories):
     if "SEARCH" in categories:
-        search = print("Enter keyword : ",input())
+        search = categories[1]
         final = text.replace(search,"[REDACTED]")
         return final
     else:
@@ -64,8 +64,6 @@ def redaction(path, categories):
     final_text = ''
     hell = []
 
-    if var == 0:  # CASE FOR MANUAL REDACTION
-        pass
     if var == 1:  # CASE FOR ENTITY REDACTION
         if txt_type == "pdf":
             page = pdf_to_text(path)
