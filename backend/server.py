@@ -6,8 +6,9 @@ x = datetime.datetime.now()
 app = Flask(__name__)
 
 
-@app.route('/data')
+@app.route('/data', methods=['POST'])
 def get_time():
+    print(request.json['path'])
     return {
         'Name': "geek",
         "Age": "22",

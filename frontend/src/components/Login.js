@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Alert, Button, Card, Form } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
@@ -18,7 +18,13 @@ export default function Login() {
     try {
       setError("");
       setLoading(true);
-      fetch("/data").then((res) =>
+      fetch("/data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ path: "Hello World" }),
+      }).then((res) =>
         res.json().then((data) => {
           console.log(data);
         })
