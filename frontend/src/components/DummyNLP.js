@@ -3,12 +3,14 @@ import Card from "react-bootstrap/Card";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { Link } from "react-router-dom";
+import "./nlp.css"
+
+var arr = [];
 
 function DummyNLP() {
   const handleLogout = () => {};
 
   const [checked, setChecked] = useState(false);
-  var arr = [];
   const handleInputChange = (itemToAdd) => {
     // console.log(event.target.value)
 
@@ -29,11 +31,55 @@ function DummyNLP() {
     console.log(arr);
   };
 
+
+  const [inputValue, setInputValue] = React.useState("");
+
+const onChangeHandler = event => {
+   setInputValue(event.target.value);
+};
+  
+
+const onChangeHandler2 = event => {
+  // arr.push(inputValue)
+  arr[1]= inputValue
+  console.log(arr)
+};
+
+
+
   const mystyle = {
     marginTop : '100px',
     width: '100%',
     height: '100%'
   };
+
+  
+    const [showResults, setShowResults] = useState(false)
+    const [checkboxStyle, setCheckboxStyle] = useState(false)
+
+    const onClickSearch = (itemToAdd) => {
+
+      if (itemToAdd.target.value == 'SEARCH') {
+        arr.splice(0, arr.length);
+      } 
+        arr.push(itemToAdd.target.value);
+    
+console.log(arr)
+
+      setShowResults(!showResults)
+      setCheckboxStyle("searchStyle2")
+      setCheckboxStyle(current => !current);
+    }
+
+
+    
+
+      
+  
+  
+
+  
+
   async function handleSubmit() {
     fetch("/data", {
       method: "POST",
@@ -96,17 +142,24 @@ function DummyNLP() {
             </label>
             <input class="form-control" type="file" id="formFile" />
           </div>
+
+          <div className="d-flex">
+
+          <div>
           <DropdownButton
             id="dropdown-basic-button"
             title="Choose what to redact"
           >
             <div className="container">
+
+            <div className={checkboxStyle}>
               <div>
                 <input
                   name="person"
                   type="checkbox"
                   onChange={handleInputChange}
                   value="PERSON"
+                  className={checkboxStyle}
                 />
                 <label htmlFor="checked">Person</label>
               </div>
@@ -140,8 +193,46 @@ function DummyNLP() {
                 />
                 <label htmlFor="checked">Location</label>
               </div>
+
+              
             </div>
+            </div>
+            
+            <div className="container">
+                <input
+                  name="org"
+                  type="checkbox"
+                  onChange={onClickSearch}
+                  value="SEARCH"
+                />
+                <label htmlFor="checked">Search</label>
+              </div>
           </DropdownButton>
+          </div>
+          
+         
+          <div>
+        { showResults ?  
+        
+        <div class="input-group mb-3 ml-2">
+          <input
+   type="text"
+   name="name"
+   onChange={onChangeHandler}
+   value={inputValue}
+   class="form-control" placeholder="Search for an entity" aria-label="Recipient's username" aria-describedby="basic-addon2"
+/>
+  <div class="input-group-append">
+    <button class="input-group-text" onClick={onChangeHandler2} id="basic-addon2">Search</button>
+  </div>
+</div>
+
+        : null }
+      </div>
+
+          </div>
+
+         
 
           <button
             type="button"
