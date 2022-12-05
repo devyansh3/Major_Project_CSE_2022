@@ -11,12 +11,9 @@ app = Flask(__name__)
 
 @app.route('/data', methods=['POST'])
 def get_time():
-    print(redaction(request.json['path']))
+    ans = redaction(request.json['path'])
     return {
-        'Name': "geek",
-        "Age": "22",
-        "Date": x,
-        "programming": "python"
+        'redacted': ans,
     }
   
 
@@ -29,13 +26,12 @@ def pdftoTxt(path):
     with pdfplumber.open(path) as pdf:
         for i in range(len(pdf.pages)):
             current_page = pdf.pages[i]
-            pages[i] = nlp(current_page.extract_text())
+            pages.append(current_page.extract_text())
     return pages
 
 
 def txtinp():
     txt = input()
-    txt = nlp(txt)
     return txt
 
 
@@ -51,34 +47,36 @@ def Sanitize(text,type):
             redacted.append("[REDACTED]")
         else:
             redacted.append(token.text)
-    print(" ".join(redacted))
+    final = (" ".join(redacted))
+    return final
 
 
-def selectParam():
-    print("Choose redaction parameters : ")
-    print(" 1. PERSON\n 2. ORGANISATION\n 3. TIME\n 4. GPE\n 5.CARDINAL ")
-    ans = list((input().strip().split(' ')))
-    return ans
+# def selectParam():
+#     print("Choose redaction parameters : ")
+#     print(" 1. PERSON\n 2. ORGANISATION\n 3. TIME\n 4. GPE\n 5.CARDINAL ")
+#     ans = list((input().strip().split(' ')))
+#     return ans
 
 
 def redaction(path):
-    var = -1
-    txttype = ""
+    var = 1
+    txttype = "pdf"
+    final_text = ''
+    hell = []
 
 
     if var ==0: #CASE FOR MANUAL REDACTION
         pass
     if var ==1: #CASE FOR ENTITY REDACTION
-        par = selectParam()
+        par = ['PERSON','ORG']
         if txttype == "pdf":
             page = pdftoTxt(path)
             for i in range(len(page)):
-                page[i] = Sanitize(page[i],par)
-            final_text = ' '.join(page)
+                hell.append(Sanitize(page[i],par))
+            final_text = ' '.join(hell)
         if txttype == "txt":
             text = txtinp()
             final_text =  Sanitize(text,par)
-
     return final_text
 
 
