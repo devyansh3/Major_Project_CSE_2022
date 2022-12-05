@@ -30,15 +30,51 @@ function DummyNLP() {
     
   };
 
+  const mystyle = {
+    marginTop : '100px',
+    width: '100%',
+    height: '100%'
+  };
+
   return (
     <>
-      <Card className="mt-3">
+    <div style={mystyle}>
+
+
+    <Card className="mt-3">
         <Card.Header>Start Redacting</Card.Header>
         <Card.Body>
-          <Card.Title>Upload file</Card.Title>
-          <Card.Text>
-            Please upload file in .docx .pdf or .xlsx format to enable redaction
-          </Card.Text>
+         
+
+<div className="d-flex">
+
+  <div >
+  <p><label for="w3review">Start typing to begin redaction process</label></p>
+  <textarea style={{width: '100%',
+  height: '150px',
+  padding: '12px 20px',
+  border: '2px solid #ccc',
+  borderRadius: '4px',
+  backgroundColor: '#f8f8f8',
+  fontSize: '16px',
+  }} id="inputText" name="w3review" rows="4" cols="50">At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.</textarea>
+  
+  </div>
+ <br/>
+  <div className="ml-2">
+  <p><label for="w3review">Output appears here.</label></p>
+  <textarea style={{width: '100%',
+  height: '150px',
+  padding: '12px 20px',
+  border: '2px solid #ccc',
+  borderRadius: '4px',
+  backgroundColor: '#f8f8f8',
+  fontSize: '16px',
+  }} id="outputText" name="w3review" rows="4" cols="50">Start redaction to view results</textarea>
+  
+  </div>
+</div>
+          
           <div class="mb-3">
             <label for="formFile" class="form-label">
               Upload
@@ -105,6 +141,10 @@ function DummyNLP() {
           </button>
         </Card.Body>
       </Card>
+
+    </div>
+      
+      
     </>
   );
 }
