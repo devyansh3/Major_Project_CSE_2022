@@ -59,10 +59,11 @@ function DummyNLP() {
   const [checkboxStyle, setCheckboxStyle] = useState(false);
 
   const onClickSearch = (itemToAdd) => {
-    if (itemToAdd.target.value == "SEARCH") {
-      arr.splice(0, arr.length);
+    if (arr.indexOf(itemToAdd.target.value) != -1) {
+      arr.splice(arr.indexOf(itemToAdd), 1);
+    } else {
+      arr.push(itemToAdd.target.value);
     }
-    arr.push(itemToAdd.target.value);
 
     console.log(arr);
 
@@ -194,6 +195,7 @@ function DummyNLP() {
                       </div>
                     </div>
                   </div>
+                  
 
                   <div className="container">
                     <input
